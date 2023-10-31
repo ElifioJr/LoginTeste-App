@@ -1,24 +1,53 @@
-﻿namespace LoginTeste_APP
+﻿using LoginTeste_APP.Models;
+using LoginTeste_APP.Pages;
+using Microsoft.Maui.Controls.PlatformConfiguration.GTKSpecific;
+
+namespace LoginTeste_APP
     {
     public partial class MainPage : ContentPage
         {
-        int count = 0;
+        
 
         public MainPage()
             {
-            InitializeComponent();
+                InitializeComponent();          
+                
             }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void btnEntrar_Clicked(object sender, EventArgs e)
             {
-            count++;
+            
+            string nome =  Usuario.Text;
+            string senha =  Senha.Text;
+            
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
+
+            if (!string.IsNullOrEmpty(nome) && !string.IsNullOrEmpty(senha))
+                {     
+                    if(nome == "adm" && senha == "123")
+                    {
+                    DisplayAlert("Bem Vindo", "Usuario e Senha corretos!", "Fechar");
+                    Navigation.PushAsync(new Dashboard());
+                    }
+                else
+                    {
+                    DisplayAlert("Atencao!", "Usuario Incorreto", "Fechar");
+                    return;
+                    }
+               
+                }
             else
-                CounterBtn.Text = $"Clicked {count} times";
+                {
+                DisplayAlert("Atencao!", "Usuario Incorreto", "Fechar");
+                return;
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+                }
+           
             }
+
+        private void btnCadastro_Clicked(object sender, EventArgs e)
+            {
+                 Navigation.PushAsync(new CadastroPage());
+            }       
         }
     }

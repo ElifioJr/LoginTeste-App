@@ -1,41 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LoginTeste_APP.MainPage">
+             x:Class="LoginTeste_APP.MainPage"
+             Shell.NavBarIsVisible="false">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+    <Grid BackgroundColor="#3179ea">
+        
+        <StackLayout WidthRequest="420" HeightRequest="200" HorizontalOptions="Center" Margin="0,60,0,560">
+            <Frame CornerRadius="850" HeightRequest="200" WidthRequest="220" BackgroundColor="#0f29aa">
+                <Image Source="betabluelogo.png" WidthRequest="230" HeightRequest="150" VerticalOptions="Center" Margin="0"/>
+            </Frame>
+        </StackLayout>
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+        <StackLayout WidthRequest="380" HeightRequest="220" Margin="10,190,10,0">
+            <Frame CornerRadius="120" WidthRequest="350" HeightRequest="300" HorizontalOptions="Center">
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+                <StackLayout Margin="15">
+                    <Entry Text="{Binding Usuario}" Placeholder="Usuario" x:Name="Usuario" TextColor="Black" WidthRequest="220"/>
+                    <Entry Text="{Binding Senha}" Placeholder="Senha" IsPassword="True" x:Name="Senha" TextColor="Black" WidthRequest="220"/>
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+                    <StackLayout>
+                        <Button  BackgroundColor="LightSteelBlue" TextColor="Black"  CornerRadius="80" Margin="10" Padding="2" HorizontalOptions="Center"  Text="Entrar" BindingContext="{Binding entrar}" x:Name="btnEntrar" Clicked="btnEntrar_Clicked" HeightRequest="35" WidthRequest="220"/>
+                    </StackLayout>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+                    <StackLayout>
+                        <Button BackgroundColor="#8ec0fa" TextColor="Black"  CornerRadius="80" Margin="0" Padding="2" HorizontalOptions="Center"  Text="Cadastro" BindingContext="{Binding cadastro}" x:Name="btnCadastro" Clicked="btnCadastro_Clicked" HeightRequest="35" WidthRequest="220"/>
+                    </StackLayout>
 
-        </VerticalStackLayout>
-    </ScrollView>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="15" Padding="0">
+                        <ImageButton Source="facebook.svg" HeightRequest="30" WidthRequest="50" x:Name="btnFace"/>
+                        <ImageButton Source="google.svg"  HeightRequest="30" WidthRequest="50" x:Name="btnGoogle"/>
+                        <ImageButton Source="instagram.svg" HeightRequest="30" WidthRequest="50" x:Name="btnInsta"/>
+                    </StackLayout>
+                </StackLayout>
+                
+            </Frame>
+           
+           
+            
+            
+
+
+
+        </StackLayout>
+     
+
+
+
+    </Grid>
 
 </ContentPage>

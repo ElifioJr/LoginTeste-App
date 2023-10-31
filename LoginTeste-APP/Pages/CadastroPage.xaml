@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoginTeste_APP.Pages.CadastroPage"
+             Title="CadastroPage"
+             Shell.NavBarIsVisible="false">
+    <Grid BackgroundColor="#3179ea" HorizontalOptions="Center" WidthRequest="400">
+        
+        <Frame BackgroundColor="Transparent" WidthRequest="220" HeightRequest="60" Margin="0,5,5,550" CornerRadius="20">
+            <Label Text="Sing In" HorizontalOptions="Center" TextColor="White"/>
+        </Frame>
+        
+        <StackLayout Padding="0" VerticalOptions="Center">
+            <Image Source="betabluelogo.svg"/>
+        </StackLayout>
+
+        <Frame CornerRadius="120" WidthRequest="390" HeightRequest="400" HorizontalOptions="Center" BackgroundColor="Transparent">
+            <StackLayout WidthRequest="350" HeightRequest="290" Margin="0,80,0,80">
+                
+                <Frame CornerRadius="80" HeightRequest="45" WidthRequest="290" Margin="5" BackgroundColor="Transparent">
+                    <Entry HeightRequest="50" WidthRequest="270" Placeholder="Usuario" PlaceholderColor="Black" FontAttributes="Bold" TextColor="Black" Text="{Binding UsuarioCadastro}" x:Name="UsuarioCadastro"/>
+                </Frame>
+                
+                <Frame CornerRadius="80" HeightRequest="45" WidthRequest="290" Margin="5" BackgroundColor="Transparent">
+                    <Entry HeightRequest="50" WidthRequest="270" Placeholder="Senha" IsPassword="True" x:Name="SenhaCadastro" Text="{Binding SenhaCadastro}" PlaceholderColor="Black" FontAttributes="Bold" TextColor="Black"/>
+                </Frame>
+                
+                <Frame CornerRadius="80" HeightRequest="45" WidthRequest="290" Margin="5" BackgroundColor="Transparent">
+                    <Entry HeightRequest="50" WidthRequest="270" Placeholder="Confirmar Senha" IsPassword="True" x:Name="SenhaConfirma" Text="{Binding SenhaConfirma}" PlaceholderColor="Black" FontAttributes="Bold" TextColor="Black"/>
+                </Frame>
+                
+                <Frame CornerRadius="80" HeightRequest="45" WidthRequest="290" Margin="5" BackgroundColor="Transparent">
+                    <Entry HeightRequest="50" WidthRequest="270" Placeholder="E-Mail" x:Name="EmailCadastro" Text="{Binding EmailCadastro}" PlaceholderColor="Black" FontAttributes="Bold" TextColor="Black"/>
+                </Frame>
+                <Frame CornerRadius="80" HeightRequest="45" WidthRequest="290" Margin="5" BackgroundColor="Transparent">
+                    <Entry HeightRequest="50" WidthRequest="270" Placeholder="Numero" x:Name="NumeroCadastro" Text="{Binding NumeroCadastro}" PlaceholderColor="Black" FontAttributes="Bold" TextColor="Black"/>
+                </Frame>
+            </StackLayout>
+        </Frame>
+
+        <Button Text="Cadastrar" HeightRequest="40" WidthRequest="180" CornerRadius="60" TextColor="Black" BackgroundColor="#8ec0fa" Margin="15,580,50,50" HorizontalOptions="Start" x:Name="btnCadastrar" Clicked="btnCadastrar_Clicked"/>
+        <Button Text="Cancelar" HeightRequest="40" WidthRequest="180" CornerRadius="60" TextColor="Black" BackgroundColor="Red" Margin="200,580,15,50" HorizontalOptions="End" x:Name="btnCancelar" Clicked="btnCancelar_Clicked"/>
+
+    </Grid>
+</ContentPage>
